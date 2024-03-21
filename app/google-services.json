@@ -12,7 +12,20 @@
           "package_name": "com.app.whisperly"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1032462594962-ka59o0647isnobqaub0qd4plqsrk7e1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.whisperly",
+            "certificate_hash": "10c6d36278b9c329074698789f87af2817bf13d0"
+          }
+        },
+        {
+          "client_id": "1032462594962-87bquj14f69v7leao6grtom51mf6ssl1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyANFHpBJ9D6-omyyyNn4QklEgkRcB3AOJE"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032462594962-87bquj14f69v7leao6grtom51mf6ssl1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
