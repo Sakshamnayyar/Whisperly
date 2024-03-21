@@ -34,6 +34,11 @@
             android:name=".view.CreateAccountActivity"
             android:exported="true"
             android:theme="@style/Theme.Whisperly"/>
+
+        <activity
+            android:name=".view.HomeScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Whisperly"/>
     </application>
 
 </manifest>

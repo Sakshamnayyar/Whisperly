@@ -34,8 +34,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.app.whisperly.R
 import com.app.whisperly.ui.theme.WhisperlyTheme
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -90,7 +92,8 @@ class MainActivity : ComponentActivity() {
 
                         LoginPage(
                             onLoginSuccess = {
-                                Toast.makeText(this@MainActivity,"Auth. success!",Toast.LENGTH_SHORT).show()
+                                navigateToHomeScreen()
+                                Toast.makeText(this@MainActivity,"Email Auth. success!",Toast.LENGTH_SHORT).show()
                             },
                             onSignup = {
                                 startActivity(Intent(this@MainActivity,SignUpActivity::class.java))
@@ -108,14 +111,23 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    fun navigateToHomeScreen(){
+        val intent = Intent(this, HomeScreenActivity::class.java)
+        //It ensures that the current one is removed from the back stack
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
+
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         FirebaseAuth.getInstance().signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this,"OAuth. success!",Toast.LENGTH_SHORT).show()
+                    navigateToHomeScreen()
+                    Toast.makeText(this,"Google Auth. success!",Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this,"OAuth. fail!",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Google Auth. fail!",Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -194,13 +206,4 @@ fun GoogleSignInButton(onClick: () -> Unit) {
     }
 }
 
-//@Composable
-//fun AuthNavigation() {
-//    val authState = remember { FirebaseAuth.getInstance().currentUser != null }
-//
-//    if (authState) {
-//        //ChatScreen() // Your chat screen Composable function
-//    } else {
-//        LoginPage(onLoginSuccess = { /* Navigate to Chat Screen */ })
-//    }
-//}
+
