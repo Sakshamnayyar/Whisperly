@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import com.app.whisperly.model.Country
 import com.app.whisperly.util.LogInFailedState
 import com.app.whisperly.util.toast
-import com.app.whisperly.view.MainActivity
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.AuthResult
@@ -17,10 +16,8 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityRetainedScoped
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import kotlin.math.sign
 
 class SignInRepository @Inject constructor(
     @ApplicationContext private val context: Context

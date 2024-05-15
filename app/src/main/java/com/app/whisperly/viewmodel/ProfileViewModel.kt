@@ -1,23 +1,16 @@
 package com.app.whisperly.viewmodel
 
 import android.content.Context
-import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.whisperly.model.UserProfile
 import com.app.whisperly.util.LoadState
 import com.app.whisperly.util.MPreference
-import com.app.whisperly.util.toast
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.firebase.firestore.SetOptions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    @ApplicationContext private val context: Context,
     private val preference: MPreference ): ViewModel() {
 
     val progressProPic = MutableLiveData(false)

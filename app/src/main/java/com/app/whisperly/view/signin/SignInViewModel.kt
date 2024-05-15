@@ -1,11 +1,9 @@
 package com.app.whisperly.view.signin
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.app.whisperly.model.Country
 import com.app.whisperly.model.ModelMobile
 import com.app.whisperly.model.UserProfile
@@ -13,7 +11,6 @@ import com.app.whisperly.util.Countries
 import com.app.whisperly.util.LogInFailedState
 import com.app.whisperly.util.MPreference
 import com.app.whisperly.util.toast
-import com.app.whisperly.view.MainActivity
 import com.app.whisperly.view.homescreen.HomeScreenRoute
 import com.app.whisperly.view.navigation.RouteNavigator
 import com.google.android.gms.tasks.Task
@@ -22,9 +19,7 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
 @HiltViewModel
@@ -80,10 +75,10 @@ class SignInViewModel @Inject constructor(
         this.country.value = country
     }
 
-    fun setMobile(context: Context) {
+    fun setMobile(actContext: Context) {
         signInRepo.clearOldAuth()
         saveMobile()
-        signInRepo.setMobile(country.value!!, mobile.value!!,context)
+        signInRepo.setMobile(country.value!!, mobile.value!!,actContext)
     }
 
     fun setEmptyText(){

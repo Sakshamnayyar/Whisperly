@@ -1,17 +1,11 @@
 package com.app.whisperly.viewmodel
 
-import android.content.Context
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.whisperly.db.data.ChatUser
 import com.app.whisperly.db.repository.ContactsRepository
-import com.app.whisperly.db.repository.DbRepository
 import com.app.whisperly.model.Contact
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject

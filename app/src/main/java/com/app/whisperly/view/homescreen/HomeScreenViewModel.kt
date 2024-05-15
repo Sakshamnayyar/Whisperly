@@ -6,6 +6,7 @@ import com.app.whisperly.db.data.ChatUser
 import com.app.whisperly.db.repository.DbRepository
 import com.app.whisperly.model.ModelMobile
 import com.app.whisperly.model.UserProfile
+import com.app.whisperly.util.UserUtil
 import com.app.whisperly.view.navigation.RouteNavigator
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -25,33 +26,7 @@ class HomeScreenViewModel @Inject constructor(
     }
 
     private fun fetchChats() {
-
-        chatUserList.add(ChatUser(
-            id = "one",
-            userName = "Saksham",
-            displayName = "Saksham",
-            user = UserProfile(
-                uId = "one",
-                createdAt = System.currentTimeMillis(),
-                userName = "Saksham",
-                mobile = ModelMobile("+91","9855430405"),),
-            lastMessageTime = 0L,
-            lastMessage = "Hello",
-            unRead = 0))
-
-        chatUserList.add(ChatUser(
-            id = "two",
-            userName = "Nayyar",
-            displayName = "Nayyar",
-            user = UserProfile(
-                uId = "two",
-                createdAt = System.currentTimeMillis(),
-                userName = "Nayyar",
-                mobile = ModelMobile("+1","3023903883"),),
-            lastMessageTime = 0L,
-            lastMessage = "Bhai!!",
-            unRead = 0))
-
+        chatUserList.addAll(UserUtil.fetchChatUser("",""))
     }
 
 }
