@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.app.whisperly">
 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
-        android:name=".MyApplication"
+        android:name="com.app.whisperly.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -26,17 +30,7 @@
         </activity>
 
         <activity
-            android:name=".view.SignUpActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Whisperly"/>
-
-        <activity
-            android:name=".view.CreateAccountActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Whisperly"/>
-
-        <activity
-            android:name=".view.HomeScreenActivity"
+            android:name=".view.NewContactsDisplayActivity"
             android:exported="true"
             android:theme="@style/Theme.Whisperly"/>
     </application>
