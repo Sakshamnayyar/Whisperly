@@ -271,6 +271,6 @@ object Countries {
     }
 
     fun getDefaultCountry(): Country{
-        return Country("IN", "India", "+91", "INR")
+        return Country("US", "United States", "+1", "USD")
     }
 }

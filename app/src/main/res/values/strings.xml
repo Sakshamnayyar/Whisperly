@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Whisperly</string>
+    <string name="fileprovider">com.app.whisperly.view.profileScreen.fileprovider</string>
 </resources>

@@ -9,6 +9,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.app.whisperly.view.homescreen.HomeScreenRoute
 import com.app.whisperly.view.homescreen.HomeScreenViewModel
+import com.app.whisperly.view.profileScreen.ProfileScreenRoute
+import com.app.whisperly.view.profileScreen.ProfileViewModel
 import com.app.whisperly.view.signin.SignInRoute
 import com.app.whisperly.view.signin.SignInViewModel
 import com.app.whisperly.view.signin.VerifyRoute
@@ -18,6 +20,7 @@ fun NavigationComponent(navHostController: NavHostController, paddingValues: Pad
 
     val signInViewModel: SignInViewModel = hiltViewModel()
     val homeScreenViewModel: HomeScreenViewModel = hiltViewModel()
+    val profileViewModel:ProfileViewModel = hiltViewModel()
 
     NavHost(
         navController = navHostController,
@@ -27,6 +30,7 @@ fun NavigationComponent(navHostController: NavHostController, paddingValues: Pad
         SignInRoute.composable(this, navHostController,signInViewModel)
         VerifyRoute.composable(this,navHostController,signInViewModel)
         HomeScreenRoute.composable(this, navHostController, homeScreenViewModel)
+        ProfileScreenRoute.composable(this,navHostController,profileViewModel)
         //Define all the routes for screens here.
     }
 }

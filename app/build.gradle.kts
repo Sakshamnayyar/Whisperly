@@ -55,6 +55,8 @@ android {
 
 dependencies {
 
+    implementation(project(":designsystem"))
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.multidex:multidex:2.0.1")
@@ -78,10 +80,19 @@ dependencies {
     implementation ("com.google.accompanist:accompanist-coil:0.15.0")
     implementation("com.google.accompanist:accompanist-navigation-animation:0.24.7-alpha")
 
+    //Image handler
+    implementation("io.coil-kt:coil-compose:2.2.2")
+    implementation("io.coil-kt:coil-gif:1.0.0")
+//    releaseImplementation("com.github.CanHub:Android-Image-Cropper")
+    releaseImplementation("com.github.yalantis:ucrop:2.2.6")
+
 
     //firebase
     implementation("com.google.firebase:firebase-auth")
     implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    implementation("com.google.firebase:firebase-storage-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx")
 
     //firestore
     implementation("com.google.firebase:firebase-firestore")

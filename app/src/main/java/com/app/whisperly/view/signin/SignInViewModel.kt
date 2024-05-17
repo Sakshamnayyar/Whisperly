@@ -11,8 +11,8 @@ import com.app.whisperly.util.Countries
 import com.app.whisperly.util.LogInFailedState
 import com.app.whisperly.util.MPreference
 import com.app.whisperly.util.toast
-import com.app.whisperly.view.homescreen.HomeScreenRoute
 import com.app.whisperly.view.navigation.RouteNavigator
+import com.app.whisperly.view.profileScreen.ProfileScreenRoute
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.PhoneAuthCredential
@@ -128,7 +128,7 @@ class SignInViewModel @Inject constructor(
                     //if device id is not same,send new_user_logged type notification to the token
 
                 }
-                navigateToRoute(HomeScreenRoute.route)
+                navigateToRoute(ProfileScreenRoute.route)
             }.addOnFailureListener { e ->
                 context.toast(e.message.toString())
             }

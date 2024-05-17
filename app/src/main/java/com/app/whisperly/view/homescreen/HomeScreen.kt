@@ -221,11 +221,6 @@ fun HomeScreenList(chats: List<ChatUser>) {
     }
 }
 
-@Composable
-fun ChatItem(chat: ChatUser) {
-    // Simple representation of a chat item
-    Text(text = "${chat.displayName}: ${chat.userName} - ${chat.user.mobile?.phoneNumber}")
-}
 
 // Define your navigation screens as objects within this enum class
 enum class Screen(val route: String, val icon: ImageVector, val title: String) {

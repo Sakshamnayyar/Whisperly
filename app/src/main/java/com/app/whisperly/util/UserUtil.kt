@@ -1,9 +1,15 @@
 package com.app.whisperly.util
 
 
+import android.content.Context
 import com.app.whisperly.db.data.ChatUser
 import com.app.whisperly.model.ModelMobile
 import com.app.whisperly.model.UserProfile
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 
 object  UserUtil {
     fun fetchChatUser(phoneNumber: String, name: String): List<ChatUser>{
@@ -35,5 +41,16 @@ object  UserUtil {
 
     }
 
+    fun getStorageRef(context: Context): StorageReference {
+        val preference = MPreference(context)
+        val ref = Firebase.storage.getReference("Users")
+        return ref.child(preference.getUid().toString())
+    }
+
+    fun getDocumentRef(context: Context): DocumentReference {
+        val preference = MPreference(context)
+        val db = FirebaseFirestore.getInstance()
+        return db.collection("Users").document(preference.getUid()!!)
+    }
 
 }
