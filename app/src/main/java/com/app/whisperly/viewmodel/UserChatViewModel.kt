@@ -2,8 +2,8 @@ package com.app.whisperly.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.whisperly.db.data.ChatUser
-import com.app.whisperly.db.repository.DbRepository
+import com.app.whisperly.database.data.ChatUser
+import com.app.whisperly.repositories.DbRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

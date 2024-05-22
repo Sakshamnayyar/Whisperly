@@ -13,9 +13,6 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.firestore.SetOptions
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
-import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
@@ -48,6 +45,9 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun uploadProfileImage(imagePath: Uri) {
+        //TODO: Firebase temp
+        profilePicUrl.value = imagePath.toString()
+        context.toast(imagePath.toString())
         try {
             val child = storageRef.child("profile_picture_${System.currentTimeMillis()}.jpg")
             val task = child.putFile(imagePath)
@@ -77,11 +77,13 @@ class ProfileViewModel @Inject constructor(
                 token = preference.getPushToken().toString(),
                 mobile = preference.getMobile()
             )
-            docuRef.set(profile, SetOptions.merge()).addOnSuccessListener {
-                preference.saveProfile(profile)
-            }.addOnFailureListener { e ->
-                context.toast(e.message.toString())
-            }
+            preference.saveProfile(profile)
+            //TODO firebase
+//            docuRef.set(profile, SetOptions.merge()).addOnSuccessListener {
+//                preference.saveProfile(profile)
+//            }.addOnFailureListener { e ->
+//                context.toast(e.message.toString())
+//            }
         } catch (e: Exception) {
             e.printStackTrace()
         }

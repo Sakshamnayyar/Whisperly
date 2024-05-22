@@ -270,7 +270,7 @@ object Countries {
         return COUNTRIES.toList()
     }
 
-    fun getDefaultCountry(): Country{
+    fun getDefaultCountry(): Country {
         return Country("US", "United States", "+1", "USD")
     }
 }

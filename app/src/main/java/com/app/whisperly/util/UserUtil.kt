@@ -2,7 +2,7 @@ package com.app.whisperly.util
 
 
 import android.content.Context
-import com.app.whisperly.db.data.ChatUser
+import com.app.whisperly.database.data.ChatUser
 import com.app.whisperly.model.ModelMobile
 import com.app.whisperly.model.UserProfile
 import com.google.firebase.firestore.DocumentReference
@@ -14,7 +14,8 @@ import com.google.firebase.storage.ktx.storage
 object  UserUtil {
     fun fetchChatUser(phoneNumber: String, name: String): List<ChatUser>{
 
-        return listOf(ChatUser(
+        return listOf(
+            ChatUser(
             id = "one",
             userName = "Saksham",
             displayName = "Saksham",
@@ -37,7 +38,8 @@ object  UserUtil {
                     mobile = ModelMobile("+1","3023903883"),),
                 lastMessageTime = 0L,
                 lastMessage = "Bhai!!",
-                unRead = 0))
+                unRead = 0)
+        )
 
     }
 

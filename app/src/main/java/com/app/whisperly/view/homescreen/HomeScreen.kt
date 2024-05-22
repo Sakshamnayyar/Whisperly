@@ -50,13 +50,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.app.whisperly.db.data.ChatUser
+import com.app.whisperly.database.data.ChatUser
 import com.app.whisperly.model.Contact
 import com.app.whisperly.view.NewContactsDisplayActivity
 import com.app.whisperly.view.navigation.NavRoute
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
-import kotlin.reflect.KProperty0
 
 
 object HomeScreenRoute : NavRoute<HomeScreenViewModel> {

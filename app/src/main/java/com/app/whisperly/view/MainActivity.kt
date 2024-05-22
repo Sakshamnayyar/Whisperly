@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Scaffold
 import androidx.navigation.compose.rememberNavController
-import com.app.whisperly.ui.theme.WhisperlyTheme
+import com.app.whisperly.theme.WhisperlyTheme
 import com.app.whisperly.view.navigation.NavigationComponent
 import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint

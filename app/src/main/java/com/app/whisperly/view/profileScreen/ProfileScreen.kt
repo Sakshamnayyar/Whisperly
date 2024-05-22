@@ -184,6 +184,7 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
         Button(
             onClick = {//TODO
                 imageUri?.let { viewModel.uploadProfileImage(it) }
+                viewModel.storeProfileData()
                 viewModel.navigateToRoute(HomeScreenRoute.route)
             },
             colors = ButtonDefaults.buttonColors(contentColor = Color.DarkGray)

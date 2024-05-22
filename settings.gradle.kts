@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Whisperly"
 include(":app")
 include(":designsystem")
+include(":data")

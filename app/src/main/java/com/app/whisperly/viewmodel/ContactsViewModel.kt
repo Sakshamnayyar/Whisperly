@@ -3,7 +3,7 @@ package com.app.whisperly.viewmodel
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.whisperly.db.repository.ContactsRepository
+import com.app.whisperly.repository.ContactsRepository
 import com.app.whisperly.model.Contact
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
